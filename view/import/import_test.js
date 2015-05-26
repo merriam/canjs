@@ -79,3 +79,15 @@ test("specify the viewModel with [.] syntax", function(){
 
 	equal(iai.ases.viewModel, "can/view/import/test/person", "viewModel set with [.] syntax");
 });
+
+test("can import a template and use it", function(){
+	var template = "<can-import from='can/view/import/test/other.stache!' #other='{value}' />{{> other}}";
+
+	can.stache.async(template).then(function(renderer){
+		var frag = renderer();
+
+		debugger;
+	});
+
+	QUnit.stop();
+});
